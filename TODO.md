@@ -1,13 +1,13 @@
 # TODO
 
-1. Adjust timings based on prior workshop data
+1. time the workshop and adjust timings based on prior workshop data
 
 2. Store survey responses
 
-   - Use Google sheet API?
-   - assign unique client ids (use localstorage; thus able to continue tracking after refresh)
-   - use timestamps
-   - save how to link (create separate write-up)
+   - Use Google sheet API
+   - assign unique client ids (use localstorage; thus able to continue correct q&a assignment after refresh)
+   - record survey answer timestamp => help disambiguate a user's answer (e.g., if they change their answer and we receive results out-of-order)
+   - save how-to link (create separate write-up)
 
 3. Anscombe's quartet dataset
 
@@ -24,6 +24,14 @@
 8. Rebuild on-line documentation.
 
 9. Add link(s) to on-line documentation
+
+10. different types of survey components => e.g., plain text entry for feedback
+
+11. have a way to display solutions
+
+12. create a short url, so easier for people to type into their browsers
+
+13. timeseries datasets
 
 
 ## Workshop Lessons
