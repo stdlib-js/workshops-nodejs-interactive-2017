@@ -1,5 +1,7 @@
 # TODO
 
+1. Adjust timings based on prior workshop data
+
 2. Store survey responses
 
    - Use Google sheet API?
@@ -12,6 +14,10 @@
    - Add as part of the plotting lab?
 
 4. plot REPL help text!!!
+
+5. GA
+
+6. branding (logo + link)
 
 
 ## Workshop Lessons
