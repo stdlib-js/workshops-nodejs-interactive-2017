@@ -1,0 +1,10 @@
+{
+  "name": "workshops-nodejs-interactive-2017",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "dependencies": {
+    "codelab-components": "git://github.com/googlecodelabs/codelab-components.git#^2.0.2"
+  },
+  "devDependencies": {}
+}

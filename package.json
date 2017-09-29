@@ -1,0 +1,55 @@
+{
+  "name": "workshops-nodejs-interactive-2017",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Workshop for Node.js Interactive (2017).",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/workshops-nodejs-interactive-2017/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/workshops-nodejs-interactive-2017/graphs/contributors"
+    }
+  ],
+  "scripts": {},
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/workshops-nodejs-interactive-2017.git"
+  },
+  "homepage": "https://github.com/stdlib-js/workshops-nodejs-interactive-2017",
+  "keywords": [
+    "stdlib",
+    "stdlib-js",
+    "stdlib.js",
+    "js-stdlib",
+    "standard",
+    "std",
+    "library",
+    "lib",
+    "workshop",
+    "nodejs",
+    "node.js",
+    "interactive",
+    "nodejs interactive",
+    "node interactive",
+    "node.js interactive",
+    "2017",
+    "conference",
+    "conf"
+  ],
+  "bugs": {
+    "url": "https://github.com/stdlib-js/workshops-nodejs-interactive-2017/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "polyserve": "^0.19.1"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "license": "Apache-2.0"
+}
