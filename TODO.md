@@ -19,6 +19,12 @@
 
 6. branding (logo + link)
 
+7. Remove CC-BY-SA image
+
+8. Rebuild on-line documentation.
+
+9. Add link(s) to on-line documentation
+
 
 ## Workshop Lessons
 
