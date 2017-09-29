@@ -1226,7 +1226,7 @@ base.random.gamma()</code></pre>
     return nospamFreqs[ word ] / nospamTokens.length;
 }</code></pre>
 			<p>
-				Invoke the functions for the words you have looked at before. Now think about what would happen if we were to call either function for a word that did not occur in the respective group? For our classifier to work for documents which contain words unknown to our corpus, we will have to change the way how we estimate the different word probabilities. We will make use of a technique called <i>Laplace Smoothing</i>, which in its simplest form just consists of adding a count of one to all words, even those which do not appear in documents of a given class. With the number of unique tokens in our training data set being equal to 76,709, we can adapt the functions as follows:
+				Invoke the functions for the words you have looked at before. Now think about what would happen if we were to call either function for a word that did not occur in the respective group? For our classifier to work for documents which contain words unknown to our corpus, we will have to change how we estimate the different word probabilities. We will make use of a technique called <i>Laplace Smoothing</i>, which in its simplest form just consists of adding a count of one to all words, even those which do not appear in documents of a given class. With the number of unique tokens in our training data set being equal to 76,709, we can adapt the functions as follows:
 			</p>
 			<pre><code language="javascript">
 &gt; var vocabSize = 76709;
