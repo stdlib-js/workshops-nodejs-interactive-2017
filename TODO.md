@@ -13,7 +13,7 @@
 
 4. plot REPL help text!!!
 
-5. 
+5. loading animation (spinner, etc)
 
 6. 
 
