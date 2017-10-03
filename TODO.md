@@ -5,15 +5,13 @@
 2. Store survey responses
 
    - Use Google sheet API
-   - assign unique client ids (use localstorage; thus able to continue correct q&a assignment after refresh)
-   - record survey answer timestamp => help disambiguate a user's answer (e.g., if they change their answer and we receive results out-of-order)
    - save how-to link (create separate write-up)
 
 3. 
 
 4. plot REPL help text!!!
 
-5. GA
+5. 
 
 6. 
 

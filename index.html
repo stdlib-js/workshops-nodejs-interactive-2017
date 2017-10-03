@@ -1588,6 +1588,11 @@ base.random.gamma()</code></pre>
 
 			// Initialize the REPL:
 			stdlib_repl.repl( window );
+
+			// Create a random user id, if one does not already exist...
+			if ( window.localStorage && !localStorage.getItem( '__user_id__' ) ) {
+				localStorage.setItem( '__user_id__', base.random.minstdShuffle() );
+			}
 		})();
 	</script>
 	<script type="text/javascript">
@@ -1640,13 +1645,24 @@ base.random.gamma()</code></pre>
 			function onSurvey( evt ) {
 				var xhttp;
 				var blob;
+				var uid;
 				var id;
+				var ts;
 
 				id = evt.srcElement.attributes[ 0 ].value;
+				ts = Date.now();
 
 				blob = 'id='+id;
+				blob += '&timestamp='+ts.toString();
 				blob += '&question='+evt.detail.question;
 				blob += '&answer='+evt.detail.answer;
+
+				if ( window.localStorage ) {
+					uid = localStorage.getItem( '__user_id__' );
+					if ( uid ) {
+						blob += '&uid='+uid.toString();
+					}
+				}
 
 				xhttp = new XMLHttpRequest(); // TODO: account for older IE browsers
 				xhttp.onreadystatechange = onReady;
