@@ -15,7 +15,7 @@
 
 5. GA
 
-6. branding (logo + link)
+6. 
 
 7. Remove CC-BY-SA image
 
