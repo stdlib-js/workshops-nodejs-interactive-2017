@@ -7,7 +7,9 @@
    - Use Google sheet API
    - save how-to link (create separate write-up)
 
-3. 
+3. an indicator (perhaps a dot in the lower left corner) which turns a color based on survey responses
+
+   - useful to help facilitators identify those who may be struggling and/or need a bit more attention
 
 4. plot REPL help text!!!
 
