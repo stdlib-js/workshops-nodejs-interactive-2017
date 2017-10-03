@@ -9,9 +9,7 @@
    - record survey answer timestamp => help disambiguate a user's answer (e.g., if they change their answer and we receive results out-of-order)
    - save how-to link (create separate write-up)
 
-3. Anscombe's quartet dataset
-
-   - Add as part of the plotting lab?
+3. Anscombe's quartet dataset exercise in plotting lab?
 
 4. plot REPL help text!!!
 
