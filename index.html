@@ -742,7 +742,7 @@
 			</p>
 			<aside class="special">
 				<p>
-					<a title="Statistical inference" href="https://en.wikipedia.org/wiki/Statistical_inference">Statistical inference</a> is the process of analyzing data to deduce properties (e.g., how many times we should expect to observe a particular outcome) of the data's underlying data generating process (e.g., the act of tossing a coin). The inferred properties allow us to make statements, including predictions, regarding a <i>population</i> of which the data is assumed to be a subset. For example, if we assume that heights of males in the UK follows a <a title="Normal distribution" href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a>  (i.e., a bell-shaped curve) having mean <code>&mu;</code> and standard deviation <code>&sigma;</code>, we can compute the likelihood of observing a male who is 2 meters tall, even if the data serving as the basis of our model does not contain an observation having the same value.
+					<a title="Statistical inference" href="https://en.wikipedia.org/wiki/Statistical_inference">Statistical inference</a> is the process of analyzing data to deduce properties (e.g., how many times we should expect to observe a particular outcome) of the data's underlying data generating process (e.g., the act of tossing a coin). The inferred properties allow us to make statements, including predictions, regarding a <i>population</i> of which the data is assumed to be a subset. For example, if we assume that heights of males in the UK follows a <a title="Normal distribution" href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> (i.e., a bell-shaped curve) having mean <code>&mu;</code> and standard deviation <code>&sigma;</code>, we can compute the likelihood of observing a male who is 2 meters tall, even if the data serving as the basis of our model does not contain an observation having the same value.
 				</p>
 			</aside>
 			<p>
@@ -1242,7 +1242,7 @@ base.random.gamma()</code></pre>
 					<div class="tex" data-eqn="P(c|\mathbf{x}) = \frac{P(\mathbf{x}|c) P(c)}{P(\mathbf{x})}"
 					displayMode></div>
 				<p>
-					Our decision rule of whether an email should be classified as spam is then quite simple: We can drop the denominator and calculate <span class="tex" data-eqn="P(\mathbf{x}|c) P(c) =  \prod_w P(w|c) P(c)"></span> for each class, assigning the observation to the class for which the conditional probability is larger. How do we obtain these probabilities? We estimate them by their empirical frequencies: We replace <span class="tex" data-eqn="P(c)"></span> by the percentage of documents from the respective class in our data corpus, and <span class="tex" data-eqn="P(w|c)"></span> by its relative frequency, i.e. the number of times the word appeared in documents of class <i>c</i> divided by the overall number of tokens in that class.
+					Our decision rule of whether an email should be classified as spam is then quite simple: We can drop the denominator and calculate <span class="tex" data-eqn="P(\mathbf{x}|c) P(c) = \prod_w P(w|c) P(c)"></span> for each class, assigning the observation to the class for which the conditional probability is larger. How do we obtain these probabilities? We estimate them by their empirical frequencies: We replace <span class="tex" data-eqn="P(c)"></span> by the percentage of documents from the respective class in our data corpus, and <span class="tex" data-eqn="P(w|c)"></span> by its relative frequency, i.e. the number of times the word appeared in documents of class <i>c</i> divided by the overall number of tokens in that class.
 				</p>
 			</aside>
 			<p>
@@ -1394,7 +1394,7 @@ base.random.gamma()</code></pre>
 				<figcaption>Density of a bimodal distribution</figcaption>
 			</figure>
 			<p>
-				To estimate such distributions without making any strong parametric assumptions, one can use a class of models called kernel density estimators (KDEs). In contrast to a parametric model, where we encode all information on the distribution in their parameters, KDEs are non-parametric and use all data points to form an estimate for a given input value. Since they can learn the shape of  the  density from the data  automatically, they are very flexible and can even learn complicated distributions. To see how this works, let us imagine we some data drawn from above distribution. The density function for above distribution was
+				To estimate such distributions without making any strong parametric assumptions, one can use a class of models called kernel density estimators (KDEs). In contrast to a parametric model, where we encode all information on the distribution in their parameters, KDEs are non-parametric and use all data points to form an estimate for a given input value. Since they can learn the shape of the density from the data automatically, they are very flexible and can even learn complicated distributions. To see how this works, let us imagine we some data drawn from above distribution. The density function for above distribution was
 			</p>
 			<pre><code language="javascript">
 &gt; var truePDF = function( x ) {
