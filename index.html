@@ -202,7 +202,7 @@
 			</p>
 			<aside class="special">
 				<p>
-					<a title="A standard library for JavaScript and Node.js" href="https://github.com/stdlib-js/stdlib">stdlib</a> is a standard library for JavaScript and Node.js, with an emphasis on numeric computing. The library includes an extensive collection of standard library mathematical functions, utilities for manipulating floating-point numbers and transforming data, seedable pseudorandom number generators, BLAS interfaces, sample datasets, plotting, string utilities, and much more. See the <a title="A standard library for JavaScript and Node.js" href="https://github.com/stdlib-js/stdlib">repository</a> for more information.
+					<a title="A standard library for JavaScript and Node.js" href="https://github.com/stdlib-js/stdlib">stdlib</a> is a standard library for JavaScript and Node.js, with an emphasis on numeric computing. The library includes an extensive collection of standard library mathematical functions, utilities for manipulating floating-point numbers and transforming data, seedable pseudorandom number generators, BLAS interfaces, sample datasets, plotting, string utilities, and much more. See the <a href="https://stdlib.io/develop/docs/api/@stdlib/stdlib" title="Documentation">project documentation</a> or <a title="A standard library for JavaScript and Node.js" href="https://github.com/stdlib-js/stdlib">GitHub repository</a> for more information.
 				</p>
 			</aside>
 
@@ -272,7 +272,7 @@
 			<pre><code language="javascript">
 &gt; help( base.erf )</code></pre>
 			<p>
-				All REPL help documentation follows the same general structure, providing examples, related functionality, and top-level, parameter, and return value descriptions.
+				All REPL help documentation follows the same general structure, providing examples, related functionality, as well as top-level, parameter, and return value descriptions.
 			</p>
 			<div align="center">
 				<img alt="REPL help example" src="img/repl_help_example.png" style="max-width: 600px;">
@@ -1109,7 +1109,7 @@ base.random.gamma()</code></pre>
 
 		<google-codelab-step label="Spam Classifier" duration="20">
 			<p>
-				We are all plagued by the spam emails that arrive in our mailboxes each day. Flagging emails as spam is what we call a classification task, since it consists of assigning an observation into either of several categories (spam/no spam). In this lab, we will explore building our own spam classifier using a simple but well-performing statistical technique called <i>Naive Bayes</i>.
+				We are all plagued by the spam emails that arrive in our mailboxes each day. Flagging emails as spam is what we call a classification task, since it consists of assigning an observation into one of several categories (spam/no spam). In this lab, we will explore building our own spam classifier using a simple but well-performing statistical technique called <i>Naive Bayes</i>.
 			</p>
 			<p>
 				For this purpose, we will make use of the <code>SPAM_ASSASSIN</code> data set that ships with <a title="A standard library for JavaScript and Node.js" href="https://github.com/stdlib-js/stdlib">stdlib</a>. We can load a copy of it and assign it to the variable <code>spam</code> as follows:
@@ -1168,7 +1168,7 @@ base.random.gamma()</code></pre>
 			</p>
 			<aside class="special">
 				<p>
-					In natural language processing, a bag-of-words model is a simplifying representation of a text document, which disregards word order and grammer, only keeping count of how often a word appears in the respective document.
+					In natural language processing, a bag-of-words model is a simplifying representation of a text document, which disregards word order and grammar, only keeping count of how often a word appears in the respective document.
 				</p>
 			</aside>
 			<p>
@@ -1253,13 +1253,13 @@ base.random.gamma()</code></pre>
 			<aside class="special">
 				<h3>Laplace Smoothing</h3>
 				<p>
-					Estimating the word probabilities <span class="tex" data-eqn="P(w|c)"></span> by the empirical frequencies is problematic because it would mean that, for any word not appearing in any of the documents of the respective class, we would estimate is as zero. However, this would imply that, when classifying a new document containing a word not present in the documents of a given class, it would get assigned a probability of zero, even though it may otherwise might look a lot like the documents from said class. To deal with this issue, one could simply drop words that are unknown to the training corpus, but a better approach is <i>Laplace Smoothing</i>, in which a non-zero probability is assigned to every word beforehand. This is achieved by adding a value <span class="tex" data-eqn="\alpha"></span> to any count, so that the probability estimates change from
+					Estimating the word probabilities <span class="tex" data-eqn="P(w|c)"></span> by the empirical frequencies is problematic because it would mean that, for any word not appearing in any of the documents of the respective class, we would estimate is as zero. However, this would imply that, when classifying a new document containing a word not present in the documents of a given class, it would get assigned a probability of zero, even though the text may otherwise look a lot like the documents from said class. To deal with this issue, one could simply drop words that are unknown to the training corpus, but a better approach is <i>Laplace Smoothing</i>, in which a non-zero probability is assigned to every word beforehand. This is achieved by adding a value <span class="tex" data-eqn="\alpha"></span> to any count, so that the probability estimates change from
 				</p>
 				<div class="tex" data-eqn="\hat P(w|c) = \frac{count(w,c)}{\sum_{w \text{ in } V} count(w,c) } = \frac{count(w,c)}{N_c}" displayMode></div>
 				<p>to</p>
 				<div class="tex" data-eqn="\hat P(w|c) = \frac{count(w,c)}{\sum_{w \text{ in } V} count(w,c) }= \frac{count(w,c) + \alpha}{N_c+\alpha|V|}" displayMode></div>
 				</p>
-				where <span class="tex" data-eqn="count(w,c)"></span> is the number of times word <i>w</i> appears in the documents of class <i>c</i>, <span class="tex" data-eqn="N_c"></span> is its total number of tokens, and <span class="tex" data-eqn="|V|"></span> is the overall size of the vocabulary. Often, <span class="tex" data-eqn="\alpha"></span> is chosen to be one. <i>Laplace Smoothing</i> is preferable compared to simply discarding unknown tokens because these should decrease the probability of belonging to the respective class; they should just not turn it to zero.
+				where <span class="tex" data-eqn="count(w,c)"></span> is the number of times word <i>w</i> appears in the documents of class <i>c</i>, <span class="tex" data-eqn="N_c"></span> is the total number of tokens of the respective class, and <span class="tex" data-eqn="|V|"></span> is the overall size of the vocabulary. Often, <span class="tex" data-eqn="\alpha"></span> is chosen to be one. <i>Laplace Smoothing</i> is preferable compared to simply discarding unknown tokens because these should decrease the probability of belonging to the respective class; they should just not turn it to zero.
 			</aside>
 			<p>
 				Our workhorse function to classify new emails can now be implemented in a relatively straightforward manner. Instead of directly evaluating <span class="tex" data-eqn="\prod_w P(w|c)"></span>, which is prone to underflow issues since many of the probabilities will be small, we will take the natural logarithm and calculate the sum <span class="tex" data-eqn="\sum_w \ln P(w|c)"></span> instead. Taking the logarithm is a monotonic transformation, which does not change the rank order of the untransformed values. Therefore, predictions made from the model are not affected by this choice.
