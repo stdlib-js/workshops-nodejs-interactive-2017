@@ -4,8 +4,7 @@
 
 2. Store survey responses
 
-   - Use Google sheet API
-   - save how-to link (create separate write-up)
+   - save how-to link (create separate write-up; http://railsrescue.com/blog/2015-05-28-step-by-step-setup-to-send-form-data-to-google-sheets/)
 
 3. an indicator (perhaps a dot in the lower left corner) which turns a color based on survey responses
 
@@ -15,7 +14,7 @@
 
 5. loading animation (spinner, etc)
 
-6. 
+6. Generate new bundles and update src url to ensure most up-to-date REPL bundle
 
 7. Remove CC-BY-SA image
 
