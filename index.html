@@ -1371,7 +1371,8 @@ base.random.gamma()</code></pre>
 				As a running example, consider the case where we have data drawn from the following distribution:
 			</p>
 			<figure id="bimodal" align="center">
-				<img alt="Density of a bimodal distribution" src="img/bimodal.png" style="max-width: 600px;">
+				<img alt="Density of a bimodal distribution" src="img/bimodal.png" style="max-width: 400px;">
+				<figcaption>Density of a bimodal distributio</figcaption>
 			</figure>
 			<p>
 				To estimate such distributions without making any strong parametric assumptions, one can use a class of models called kernel density estimators (KDEs). In contrast to a parametric model, where we encode all information on the distribution in their parameters, KDEs are non-parametric and use all data points to form an estimate for a given input value. Since they can learn the  shape of  the  density  from the  data  automatically, they are very flexible and can even learn complicated distributions. To see how this works, let us imagine we some data drawn from above distribution. The density function for above distribution was
@@ -1404,11 +1405,11 @@ base.random.gamma()</code></pre>
     return out / ( n*h );
 }</code></pre>
 			<p>
-				To gain some intuition into how KDEs work, the next figure shows a kernel density constructed from the six data points located at the black rugs. The KDE works by smoothing each of these observations into a bump (displayed as the dashed red lines), whose shape is determined by the chosen kernel function.
+				To gain some intuition into how KDEs work, the next figure shows a kernel density constructed from the five data points located at the black rugs. The KDE works by smoothing each of these observations into a bump (displayed as the dashed red lines), whose shape is determined by the chosen kernel function.
 			</p>
 			<figure id="kde-construction" align="center">
 				<img alt="Construction of KDE" src="img/kde.png" style="max-width: 400px;">
-				<figcaption>Extracted from image by Drleft (CC BY-SA 3.0)</figcaption>
+				<figcaption>Construction of KDE</figcaption>
 			</figure>
 			<p>
 				These bumps are then summed together to obtain the KDE, displayed in above plot as the solid blue line. In regions with many data points, the KDE will thus return large values since many bumps were summed together, whereas the KDE will return smaller values for regions with only few observations.
