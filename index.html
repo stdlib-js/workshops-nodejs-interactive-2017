@@ -796,12 +796,12 @@
 				<figcaption>Figure E6: Expected plot.</figcaption>
 			</figure>
 			<p>
-				To see how well the empirical distribution matches the expected distribution, let us first generate an (approximated) expected distribution using <code>base.dist.normal.pdf()</code>.
+				To see how well the empirical distribution matches the expected distribution, let us first generate an (approximated) expected distribution using <code>base.dists.normal.pdf()</code>.
 			</p>
 			<pre><code language="javascript">
 &gt; var expected = new Float64Array( bcenters.length );
 &gt; forEach( bcenters, function ( x, i ) {
-    var density = base.dist.normal.pdf( x, 0.0, 1.0 );
+    var density = base.dists.normal.pdf( x, 0.0, 1.0 );
     expected[ i ] = N * bwidth * density;
 });</code></pre>
 			<aside class="special">
@@ -862,13 +862,13 @@ hist( data, bmin, bmax, bwidth )</code></pre>
 					</p>
 					<pre><code>
 base.random.beta()
-base.dist.beta.pdf()
+base.dists.beta.pdf()
 
 base.random.laplace()
-base.dist.laplace.pdf()
+base.dists.laplace.pdf()
 
 base.random.exponential()
-base.dist.exponential.pdf()</code></pre>
+base.dists.exponential.pdf()</code></pre>
 					<p>
 						Insert your plots into the element <code>#histogram-exercise-3</code> provided below.
 					</p>
@@ -1344,7 +1344,7 @@ base.random.gamma()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; var truePDF = function( x ) {
-    return 0.5 * base.dist.normal.pdf( x, 2, 1 ) + 0.5 * base.dist.normal.pdf( x, 9, 2 );
+    return 0.5 * base.dists.normal.pdf( x, 2, 1 ) + 0.5 * base.dists.normal.pdf( x, 9, 2 );
 }</code></pre>
 			<p> and we can draw a sample from it as follows: </p>
 			<pre><code language="javascript">
@@ -1399,7 +1399,7 @@ base.random.gamma()</code></pre>
 				For the kernel function, we will use the Gaussian kernel:
 			</p>
 			<pre><code language="javascript">
-&gt; var K = base.dist.normal.pdf.factory( 0.0, 1.0 );</code></pre>
+&gt; var K = base.dists.normal.pdf.factory( 0.0, 1.0 );</code></pre>
 			<p>
 				We have now everything in place to run generate a kernel density estimate for our data set and compare it with the true underlying distribution.	To overlay both the true distribution and our estimate on one plot, let us first create a linearly spaced array of values between 0 and 14 using <code>linspace</code> at whose values we will evaluate the true density as well as our estimator.
 			</p>
