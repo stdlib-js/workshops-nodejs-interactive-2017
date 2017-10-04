@@ -825,8 +825,8 @@
 &gt; var bcenters = new Float64Array( nbins );
 &gt; var bc;
 &gt; for ( i = 0; i &lt; nbins; i++ ) {
-		bc = bmin + (bwidth*i);
-		bcenters[ i ] = base.roundn( bc, -1 );
+    bc = bmin + (bwidth*i);
+    bcenters[ i ] = base.roundn( bc, -1 );
 };</code></pre>
 			<p>
 				To plot the data, we proceed as we did in the previous lab.
@@ -854,8 +854,8 @@
 			<pre><code language="javascript">
 &gt; var expected = new Float64Array( bcenters.length );
 &gt; forEach( bcenters, function ( x, i ) {
-		var density = base.dists.normal.pdf( x, 0.0, 1.0 );
-		expected[ i ] = N * bwidth * density;
+    var density = base.dists.normal.pdf( x, 0.0, 1.0 );
+    expected[ i ] = N * bwidth * density;
 });</code></pre>
 			<aside class="special">
 				<p>
@@ -986,14 +986,14 @@ base.dists.exponential.pdf()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; var page1 = [
-		1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
-		0, 0, 0, 1, 0, 0, 0, 1, 0, 0,
-		0, 1, 1, 0, 0, 0, 0, 0, 0, 0
+    1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
+    0, 0, 0, 1, 0, 0, 0, 1, 0, 0,
+    0, 1, 1, 0, 0, 0, 0, 0, 0, 0
 ];
 &gt; var page2 = [
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 1, 0, 0
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 1, 0, 0
 ];</code></pre>
 			<p>
 				A cursory look at the data suggests that the first page is more effective at converting users. To be a bit more quantitative, let us calculate the proportion of users (<i>mean</i>) who signed up per page using the <code>reduce()</code> function.
@@ -1073,10 +1073,10 @@ base.dists.exponential.pdf()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; function simulate( size ) {
-		var arr = new Array( size );
-		inmap( arr, function () { return base.random.normal( 0.0, 3.0 ); } );
-		var out = ttest( arr );
-		return out.pValue;
+    var arr = new Array( size );
+    inmap( arr, function () { return base.random.normal( 0.0, 3.0 ); } );
+    var out = ttest( arr );
+    return out.pValue;
 }</code></pre>
 			<p>
 				Now create a sufficiently large array (at least a few hunded observations) and populate it with p-values generated from this function, say, for <code>size = 100</code>. Calculate the proportion of array elements that are smaller than <code>0.05</code>. Is this proportion reasonably close to <code>0.05</code>, as we would expect? Repeat the whole process a few times to see how the results vary.
@@ -1180,28 +1180,28 @@ base.random.gamma()</code></pre>
 			<pre><code language="javascript">
 &gt; var training = []
 &gt; for ( var i = 0; i &lt; spam.length; i++ ) {
-		if ( spam[i].group === 'easy-ham-1' || spam[i].group === 'spam-2' ) {
-				training.push( spam[i] );
-		}
+    if ( spam[i].group === 'easy-ham-1' || spam[i].group === 'spam-2' ) {
+        training.push( spam[i] );
+    }
 }</code></pre>
 			<p>
 				When you looked at some of the emails, you will have noticed that these always include meta-information of the emails before the actual content. The following function helps us to strip off this part and also removes other unwanted character sequences from the emails:
 			</p>
 			<pre><code language="javascript">
 &gt; function extractBody( email ) {
-		// Remove the meta-information before two initial line breaks:
-		var LINE_BREAK_REGEXP = /[\r\n]{2}([\s\S]*)$/;
-		var text = email.match( LINE_BREAK_REGEXP )[ 1 ];
-		// Turn to lowercase such that a word is treated the same no matter its case:
-		text = lowercase( text );
-		// Expand contractions, e.g. don't => do not:
-		text = expandContractions( text );
-		text = removePunctuation( text );
-		// Remove numbers and other special characters:
-		text = text.replace( /[0-9\-\+]/g, '' );
-		// Remove common words such as "the" or "and":
-		text = removeWords( text, STOPWORDS );
-		return text;
+    // Remove the meta-information before two initial line breaks:
+    var LINE_BREAK_REGEXP = /[\r\n]{2}([\s\S]*)$/;
+    var text = email.match( LINE_BREAK_REGEXP )[ 1 ];
+    // Turn to lowercase such that a word is treated the same no matter its case:
+    text = lowercase( text );
+    // Expand contractions, e.g. don't => do not:
+    text = expandContractions( text );
+    text = removePunctuation( text );
+    // Remove numbers and other special characters:
+    text = text.replace( /[0-9\-\+]/g, '' );
+    // Remove common words such as "the" or "and":
+    text = removeWords( text, STOPWORDS );
+    return text;
 }</code></pre>
 			<p>
 				Before we are able to call this function, we need to load the list of stopwords that will be removed. Since our texts are in English, we will load a list of commonly used English words, but <a title="A standard library for JavaScript and Node.js" href="https://github.com/stdlib-js/stdlib">stdlib</a> comes with stopword lists for many other languages as well.
@@ -1229,9 +1229,9 @@ base.random.gamma()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; training = inmap( training, function( x ) {
-		x.body = extractBody( x.text );
-		x.tokens = tokenize( x.body );
-		return x;
+    x.body = extractBody( x.text );
+    x.tokens = tokenize( x.body );
+    return x;
 });</code></pre>
 			<aside class="special">
 				<h3>Mathematical Formulation of the Naive Bayes Model</h3>
@@ -1250,10 +1250,10 @@ base.random.gamma()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; var grouped = groupBy( training, function( x ) {
-		if ( x.group === 'spam-2' ) {
-				return 'spam';
-		}
-		return 'nospam';
+    if ( x.group === 'spam-2' ) {
+        return 'spam';
+    }
+    return 'nospam';
 });</code></pre>
 			<p>
 				We can now lump all tokens from texts belonging to either group together, for example by using the following code:
@@ -1277,18 +1277,18 @@ base.random.gamma()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; var groupProbs = {
-		'spam': 1396 / ( 1396 + 2500 ),
-		'nospam': 2500 / ( 1396 + 2500 )
+    'spam': 1396 / ( 1396 + 2500 ),
+    'nospam': 2500 / ( 1396 + 2500 )
 };</code></pre>
 			<p>
 				To turn the token counts into relative frequencies, we have to divide them by the total number of tokens in the respective group. Let us define two functions for this purpose:
 			</p>
 			<pre><code language="javascript">
 &gt; function wordSpamProb( word ) {
-		return spamFreqs[ word ] / spamTokens.length;
+    return spamFreqs[ word ] / spamTokens.length;
 }
 &gt; function wordNospamProb( word ) {
-		return nospamFreqs[ word ] / nospamTokens.length;
+    return nospamFreqs[ word ] / nospamTokens.length;
 }</code></pre>
 			<p>
 				Invoke the functions for the words you have looked at before. Now think about what would happen if we were to call either function for a word that did not occur in the respective group? For our classifier to work for documents which contain words unknown to our corpus, we will have to change how we estimate the different word probabilities. We will make use of a technique called <i>Laplace Smoothing</i>, which, in its simplest form, consists of adding a count of one to all words, even those which do not appear in documents of a given class. With the number of unique tokens in our training data set being equal to 76,709, we can adapt the functions as follows:
@@ -1296,12 +1296,12 @@ base.random.gamma()</code></pre>
 			<pre><code language="javascript">
 &gt; var vocabSize = 76709;
 &gt; function wordSpamProb( word ) {
-		var nk = spamFreqs[ word ] || 0;
-		return ( nk + 1 ) / ( spamTokens.length + vocabSize );
+    var nk = spamFreqs[ word ] || 0;
+    return ( nk + 1 ) / ( spamTokens.length + vocabSize );
 }
 &gt; function wordNospamProb( word ) {
-		var nk = nospamFreqs[ word ] || 0;
-		return ( nk + 1 ) / ( nospamTokens.length + vocabSize );
+    var nk = nospamFreqs[ word ] || 0;
+    return ( nk + 1 ) / ( nospamTokens.length + vocabSize );
 }</code></pre>
 			<aside class="special">
 				<h3>Laplace Smoothing</h3>
@@ -1319,17 +1319,17 @@ base.random.gamma()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; function classifyEmail( text ) {
-		var body = extractBody( text );
-		var tokens = tokenize( body );
-		var spamScore = base.ln( groupProbs[ "spam" ] );
-		for ( let i = 0; i &lt; tokens.length; i++ ) {
-				spamScore += base.ln( wordSpamProb( tokens[i] ) );
-		}
-		var nospamScore = base.ln( groupProbs[ "nospam" ] );
-		for ( let i = 0; i &lt; tokens.length; i++ ) {
-				nospamScore += base.ln( wordNospamProb( tokens[i] ) );
-		}
-		return spamScore &gt; nospamScore ? 'spam' : 'nospam';
+    var body = extractBody( text );
+    var tokens = tokenize( body );
+    var spamScore = base.ln( groupProbs[ "spam" ] );
+    for ( let i = 0; i &lt; tokens.length; i++ ) {
+        spamScore += base.ln( wordSpamProb( tokens[i] ) );
+    }
+    var nospamScore = base.ln( groupProbs[ "nospam" ] );
+    for ( let i = 0; i &lt; tokens.length; i++ ) {
+        nospamScore += base.ln( wordNospamProb( tokens[i] ) );
+    }
+    return spamScore &gt; nospamScore ? 'spam' : 'nospam';
 }</code></pre>
 			<p>
 				Test the function out on a few of the emails from <code>spam</code>. Do we make the correct predictions?
@@ -1391,19 +1391,19 @@ base.random.gamma()</code></pre>
 			</p>
 			<figure id="bimodal" align="center">
 				<img alt="Density of a bimodal distribution" src="img/bimodal.png" style="max-width: 400px;">
-				<figcaption>Density of a bimodal distributio</figcaption>
+				<figcaption>Density of a bimodal distribution</figcaption>
 			</figure>
 			<p>
-				To estimate such distributions without making any strong parametric assumptions, one can use a class of models called kernel density estimators (KDEs). In contrast to a parametric model, where we encode all information on the distribution in their parameters, KDEs are non-parametric and use all data points to form an estimate for a given input value. Since they can learn the  shape of  the  density  from the  data  automatically, they are very flexible and can even learn complicated distributions. To see how this works, let us imagine we some data drawn from above distribution. The density function for above distribution was
+				To estimate such distributions without making any strong parametric assumptions, one can use a class of models called kernel density estimators (KDEs). In contrast to a parametric model, where we encode all information on the distribution in their parameters, KDEs are non-parametric and use all data points to form an estimate for a given input value. Since they can learn the shape of  the  density from the data  automatically, they are very flexible and can even learn complicated distributions. To see how this works, let us imagine we some data drawn from above distribution. The density function for above distribution was
 			</p>
 			<pre><code language="javascript">
 &gt; var truePDF = function( x ) {
-		return 0.5 * base.dists.normal.pdf( x, 2, 1 ) + 0.5 * base.dists.normal.pdf( x, 9, 2 );
+    return 0.5 * base.dists.normal.pdf( x, 2, 1 ) + 0.5 * base.dists.normal.pdf( x, 9, 2 );
 }</code></pre>
 			<p> and we can draw a sample from it as follows: </p>
 			<pre><code language="javascript">
 &gt; var xs = new Array( 100);
-&gt; inmap( xs, function() { return base.random.randu() > 0.5 ? base.random.normal( 2, 1) : base.random.normal( 9, 2); } );</code></pre>
+&gt; inmap( xs, function() { return base.random.randu() > 0.5 ? base.random.normal( 2, 1 ) : base.random.normal( 9, 2); } );</code></pre>
 			<p>
 				The kernel density estimator for an unknown <a href="https://en.wikipedia.org/wiki/Probability_density_function">density</a> is defined as
 			</p>
@@ -1416,12 +1416,12 @@ base.random.gamma()</code></pre>
 			</p>
 			<pre><code language="javascript">
 &gt; function fhat( x, xs, K, h ) {
-		var out = 0;
-		var n = xs.length;
-		for ( var i = 0; i &lt; n; i++ ) {
-				out += K( ( x - xs[i] ) / h );
-		}
-		return out / ( n*h );
+    var out = 0;
+    var n = xs.length;
+    for ( var i = 0; i &lt; n; i++ ) {
+        out += K( ( x - xs[i] ) / h );
+    }
+    return out / ( n*h );
 }</code></pre>
 			<p>
 				To gain some intuition into how KDEs work, the next figure shows a kernel density constructed from the five data points located at the black rugs. The KDE works by smoothing each of these observations into a bump (displayed as the dashed red lines), whose shape is determined by the chosen kernel function.
@@ -1509,11 +1509,11 @@ base.random.gamma()</code></pre>
 				</p>
 				<pre><code language="javascript">
 &gt; function meanShift( xs, K, h ) {
-		var a = copy( xs );
-		for ( var j = 0; j &lt; a.length; j++ ) {
-				// Code comes here...
-		}
-		return a;
+    var a = copy( xs );
+    for ( var j = 0; j &lt; a.length; j++ ) {
+        // Code comes here...
+    }
+    return a;
 }</code></pre>
 				<p>
 					Hint: Instead of checking for convergence at each iteration, in a first pass it might be easier to just run the algorithm for a sufficiently large number of iterations (say a few hundred).
