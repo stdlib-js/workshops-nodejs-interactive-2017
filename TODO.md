@@ -12,23 +12,19 @@
 
 4. plot REPL help text!!!
 
-5. loading animation (spinner, etc)
+5. Generate new bundles and update src url to ensure most up-to-date REPL bundle
 
-6. Generate new bundles and update src url to ensure most up-to-date REPL bundle
+6. Rebuild on-line documentation.
 
-7. Remove CC-BY-SA image
+7. Add link(s) to on-line documentation
 
-8. Rebuild on-line documentation.
+8. different types of survey components => e.g., plain text entry for feedback
 
-9. Add link(s) to on-line documentation
+9. have a way to display solutions
 
-10. different types of survey components => e.g., plain text entry for feedback
+10. create a short url, so easier for people to type into their browsers
 
-11. have a way to display solutions
-
-12. create a short url, so easier for people to type into their browsers
-
-13. timeseries datasets
+11. timeseries datasets
 
 
 ## Workshop Lessons
