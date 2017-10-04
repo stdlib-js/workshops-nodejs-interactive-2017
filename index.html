@@ -287,7 +287,16 @@
 			<div align="center">
 				<img alt="REPL help example" src="img/repl_help_example.png" style="max-width: 600px;">
 			</div>
-
+			<p>
+				The functions <code>alias2pkg()</code> and <code>pkg2alias()</code> can be used to retrieve the package corresponding to a given REPL alias and vice versa. For example, to obtain the package for the <code>FEMALE_FIRST_NAMES_EN</code> dataset, call
+			</p>
+			<pre><code language="javascript">
+&gt; alias2pkg( FEMALE_FIRST_NAMES_EN )</code></pre>
+			<p>
+				Conversely, let's say you have been looking at the <a href="https://stdlib.io/develop/docs/api/@stdlib/stdlib" title="Documentation">project documentation</a> for <code>@stdlib/utils/group-by</code>. You can find the corresponding REPL alias via
+			</p>
+			<pre><code language="javascript">
+&gt; pkg2alias( '@stdlib/utils/group-by' )</code></pre>
 			<h3>Exercises</h3>
 			<ul>
 				<li>
